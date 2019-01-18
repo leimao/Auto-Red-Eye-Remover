@@ -30,6 +30,15 @@ The algorithm uses eye detection algorithm to first detect eyes. If eye detectio
 Raw | Processed |
 :-------------------------:|:-------------------------:
 ![](images/sample_1.jpg) | ![](images/sample_1_fixed.jpg)
+Raw | Processed |
+:-------------------------:|:-------------------------:
+![](images/sample_2.jpg) | ![](images/sample_2_fixed.jpg)
+Raw | Processed |
+:-------------------------:|:-------------------------:
+![](images/sample_3.jpg) | ![](images/sample_3_fixed.jpg)
+Raw | Processed |
+:-------------------------:|:-------------------------:
+![](images/sample_4.jpg) | ![](images/sample_4_fixed.jpg)
 
 
 ## Reference
