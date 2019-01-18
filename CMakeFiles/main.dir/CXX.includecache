@@ -17,7 +17,13 @@ opencv2/objdetect/objdetect.hpp
 -
 opencv2/imgproc/imgproc.hpp
 -
+boost/filesystem.hpp
+-
+sstream
+-
 iostream
+-
+string
 -
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp

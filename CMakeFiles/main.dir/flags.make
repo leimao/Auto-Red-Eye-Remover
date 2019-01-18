@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include/opencv4 
+CXX_INCLUDES = -I/usr/local/include/opencv4 -I/usr/include/boost 
 
