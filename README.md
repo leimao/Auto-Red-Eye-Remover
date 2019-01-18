@@ -59,4 +59,4 @@ Raw | Processed |
 
 ## Reference
 
-[Red Eye Removal Using OpenCV](https://www.learnopencv.com/automatic-red-eye-remover-using-opencv-cpp-python/)
+* [Red Eye Removal Using OpenCV](https://www.learnopencv.com/automatic-red-eye-remover-using-opencv-cpp-python/)
