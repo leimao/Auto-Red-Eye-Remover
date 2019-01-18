@@ -47,50 +47,26 @@ void fillHoles(Mat &mask)
     mask = (mask_inverse | mask);
 }
 
-int main(int argc, char * argv[])
+Mat remove_red_eye(Mat &img, int red_eye_threshold)
 {
-    // Use Boost library to extract file and system information.
-    string img_filepath(argv[1]);
-    string img_basename = fs::basename(img_filepath);
-    string img_extension = fs::extension(img_filepath);
-    string img_fixed_basename = img_basename + "_fixed";
-    string img_dir = fs::path(img_filepath).parent_path().string();
-    string img_fixed_filepath = img_dir + img_fixed_basename + img_extension;
-
-    Mat img = imread(img_filepath, IMREAD_COLOR);
-
     int height = img.rows;
     int width = img.cols;
 
-    int red_eye_threshold = 180;
-    if (argv[2])
-    {
-        istringstream ss(argv[2]);
-        if (!(ss >> red_eye_threshold))
-        {
-            std::cerr << "Invalid red eye threshold value: " << argv[2] << endl;
-        }
-        else if (!ss.eof())
-        {
-            std::cerr << "Invalid red eye threshold value: " << argv[2] << endl;
-        }
-    }
-    if ((red_eye_threshold < 0) || (red_eye_threshold > 255))
-    {
-        cout << "Red eye threshold value not between 0 and 255. Use default value 180." << endl;
-        red_eye_threshold = 180;
-    }
-
-
     Mat img_fixed = img.clone();
 
-    String face_cascade_name = "./haarcascade_frontalface_alt.xml";
-    String eyes_cascade_name = "./haarcascade_eye_tree_eyeglasses.xml";
+    string face_cascade_name = "./models/haarcascade_frontalface_alt.xml";
+    string eyes_cascade_name = "./models/haarcascade_eye_tree_eyeglasses.xml";
 
-    CascadeClassifier face_cascade;
     CascadeClassifier eyes_cascade;
 
-    // Load detection cascade
+    // Load detection cascade.
+    assert(eyes_cascade.load(eyes_cascade_name) && "Eyes detection model loading failed.");
+
+    /*
+    CascadeClassifier face_cascade;
+
+    assert(face_cascade.load(face_cascade_name) && "Face detection model loading failed.");
+
     if (!face_cascade.load(face_cascade_name))
     {
         printf("Error loading face detection cascade!\n");
@@ -100,9 +76,9 @@ int main(int argc, char * argv[])
     {
         printf("Error loading eyes detection cascade!\n");
         return -1;
-    };
+    };*/
 
-    std::vector<Rect> eyes;
+    vector<Rect> eyes;
 
     eyes_cascade.detectMultiScale(img, eyes, 1.1, 3, 0, Size(height/50, width/50), Size(height/2, width/2));
 
@@ -116,32 +92,6 @@ int main(int argc, char * argv[])
         cout << "No face detected!" << endl;
     }
     */
-
-
-    /*
-    for( size_t j = 0; j < faces.size(); j++ )
-    {
-        Point center(faces[j].x + faces[j].width*0.5, faces[j].y + faces[j].height*0.5 );
-        int radius = cvRound( (faces[j].width + faces[j].height)*0.25 );
-        circle( img, center, radius, Scalar( 0, 255, 0 ), 4, 8, 0 );
-    }
-
-
-    for( size_t j = 0; j < eyes.size(); j++ )
-    {
-        Point center(eyes[j].x + eyes[j].width*0.5, eyes[j].y + eyes[j].height*0.5 );
-        int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
-        circle( img, center, radius, Scalar( 255, 0, 0 ), 4, 8, 0 );
-    }
-    */
-
-    // Sometimes there will be eye decection false positives
-    // One way to remove some false positives is to make sure that the center of eye is above the center of the face
-
-    //namedWindow("Display Image", WINDOW_NORMAL );
-    //imshow("Display Image", img);
-    //waitKey(0);
-
 
     for (size_t j = 0; j < eyes.size(); j++)
     {
@@ -175,8 +125,47 @@ int main(int argc, char * argv[])
         eye_fixed.copyTo(img_fixed(eyes[j]));
     }
 
+    return img_fixed;
+}
+
+int main(int argc, char * argv[])
+{
+    // Use Boost library to extract file and system information.
+    string img_filepath(argv[1]);
+    string img_basename = fs::basename(img_filepath);
+    string img_extension = fs::extension(img_filepath);
+    string img_fixed_basename = img_basename + "_fixed";
+    string img_dir = fs::path(img_filepath).parent_path().string();
+    string img_fixed_filepath = (fs::path(img_dir) / fs::path(img_fixed_basename + img_extension)).string();
+
+    // Read image.
+    Mat img = imread(img_filepath, IMREAD_COLOR);
+
+    int red_eye_threshold = 180;
+    if (argv[2])
+    {
+        istringstream ss(argv[2]);
+        if (!(ss >> red_eye_threshold))
+        {
+            std::cerr << "Invalid red eye threshold value: " << argv[2] << endl;
+        }
+        else if (!ss.eof())
+        {
+            std::cerr << "Invalid red eye threshold value: " << argv[2] << endl;
+        }
+    }
+    if ((red_eye_threshold < 0) || (red_eye_threshold > 255))
+    {
+        cout << "Red eye threshold value not between 0 and 255. Use default value 180." << endl;
+        red_eye_threshold = 180;
+    }
+
+    Mat img_fixed = remove_red_eye(img, red_eye_threshold);
+
+    // Write fixed image to hard drive.
     imwrite(img_fixed_filepath, img_fixed);
 
+    // Display image.
     namedWindow("Corrected Image", WINDOW_NORMAL);
     imshow("Corrected Image", img_fixed);
     waitKey(0);
