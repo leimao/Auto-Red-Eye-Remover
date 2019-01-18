@@ -15,8 +15,19 @@ This is a simple automatic red eye remover implemented using OpenCV C++. It uses
 
 ## Usage
 
+### Compile
+
+The executable ``main`` was pre-compiled in Ubuntu 16.04. If you want to compile in your own environment, please use the following command in the terminal.
+
 ```bash
-./main <image_filepath> [threshold]
+$ cmake .
+$ make
+```
+
+### Run
+
+```bash
+$ ./main <image_filepath> [threshold]
 ```
 
 The red eye removed image will be saved in the same directory to the image provided. 
@@ -48,6 +59,4 @@ Raw | Processed |
 
 ## Reference
 
-https://www.learnopencv.com/automatic-red-eye-remover-using-opencv-cpp-python/
-
-http://www.ijeert.org/pdf/v2-i2/10.pdf
+[Red Eye Removal Using OpenCV](https://www.learnopencv.com/automatic-red-eye-remover-using-opencv-cpp-python/)
