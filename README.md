@@ -4,7 +4,7 @@ Lei Mao
 
 ## Introduction
 
-This is a simple automatic red eye remover implemented using OpenCV C++. It uses a naive red eye detection and correction algorithm. More complicated algorithms could be found in literatures. 
+This is a simple automatic red eye remover implemented using OpenCV and C++. It uses a naive red eye detection and correction algorithm and works well in practice. More complicated algorithms could be found in literatures. 
 
 ## Dependencies
 
