@@ -1,3 +1,0 @@
-/home/marine/GitHub/Auto_Red_Eye_Remover/CMakeFiles/edit_cache.dir
-/home/marine/GitHub/Auto_Red_Eye_Remover/CMakeFiles/main.dir
-/home/marine/GitHub/Auto_Red_Eye_Remover/CMakeFiles/rebuild_cache.dir
