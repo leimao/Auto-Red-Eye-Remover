@@ -21,21 +21,26 @@ This is a simple automatic red eye remover implemented using OpenCV C++. It uses
 
 The red eye removed image will be saved in the same directory to the image provided. 
 
-``threshold`` is optional. But sometimes red eye removal will fail or the image after removal looks abnormal due to the default threshold is not appropriate. Try a value between 0 to 255 to see whether an optimal removal could be achieved. 
+``threshold`` is optional. But sometimes red eye removal will fail or the image after removal looks abnormal due to the default threshold is not appropriate. Try a value between ``0`` to ``255`` to see whether an optimal removal could be achieved. 
 
 The algorithm uses eye detection algorithm to first detect eyes. If eye detection fails on the provided image, no red eye removal will happen. 
 
 ## Demo
 
+The following demos were generated using the default parameters. Some red eyes were failed to be removed because either the eyes were not detected or the threshold parameter was not appropriate.
+
 Raw | Processed |
 :-------------------------:|:-------------------------:
 ![](images/sample_1.jpg) | ![](images/sample_1_fixed.jpg)
+
 Raw | Processed |
 :-------------------------:|:-------------------------:
 ![](images/sample_2.jpg) | ![](images/sample_2_fixed.jpg)
+
 Raw | Processed |
 :-------------------------:|:-------------------------:
 ![](images/sample_3.jpg) | ![](images/sample_3_fixed.jpg)
+
 Raw | Processed |
 :-------------------------:|:-------------------------:
 ![](images/sample_4.jpg) | ![](images/sample_4_fixed.jpg)
