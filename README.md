@@ -27,7 +27,7 @@ The algorithm uses eye detection algorithm to first detect eyes. If eye detectio
 
 ## Demo
 
-The following demos were generated using the default parameters. Some red eyes were failed to be removed because either the eyes were not detected or the threshold parameter was not appropriate.
+The following demos were generated using the default parameters. Some red eyes were failed to be removed because either the eyes were not detected or the threshold parameter was not appropriate. Tuning ``threshold`` makes red eyes removed in most of the cases.
 
 Raw | Processed |
 :-------------------------:|:-------------------------:
