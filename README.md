@@ -17,7 +17,7 @@ This is a simple automatic red eye remover implemented using OpenCV and C++. It 
 
 ### Compile
 
-The executable ``main`` was pre-compiled in Ubuntu 16.04. If you want to compile in your own environment, please modify the OpenCV and Boost installed directories in the ``CMakeLists.txt`` file, and run the following command in the terminal.
+The executable ``main`` was pre-compiled in Ubuntu 16.04. If you want to compile in your own environment, please modify the OpenCV and Boost installation directories in the ``CMakeLists.txt`` file, and run the following command in the terminal.
 
 ```bash
 $ cmake .
