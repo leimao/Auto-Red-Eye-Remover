@@ -32,7 +32,7 @@ $ ./main <image_filepath> [threshold]
 
 The red eye removed image will be saved in the same directory to the image provided. 
 
-The ``threshold`` argument is optional. But sometimes red eye removal will fail or the image after removal looks abnormal due to the default threshold is not appropriate. Try a value between ``0`` to ``255`` to see whether an optimal removal could be achieved. 
+The ``threshold`` argument is optional, and the default value is ``180``. Sometimes red eye removal will fail or the image after removal looks abnormal due to the default threshold is not appropriate. Try a value between ``0`` to ``255`` to see whether an optimal removal could be achieved. 
 
 The algorithm uses eye detection algorithm to first detect eyes. If eye detection fails on the provided image, no red eye removal will happen. 
 
