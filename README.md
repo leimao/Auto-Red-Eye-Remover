@@ -46,15 +46,15 @@ Raw | Threshold = 100 | Threshold = 180 (default) | Threshold = 220 |
 
 Raw | Threshold = 100 | Threshold = 180 (default) | Threshold = 220 |
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](images/sample_2.jpg) | ![](images/sample_2_fixed.jpg) | ![](images/sample_2_180.jpg) | ![](images/sample_2_220.jpg)
+![](images/sample_2.jpg) | ![](images/sample_2_100.jpg) | ![](images/sample_2_180.jpg) | ![](images/sample_2_220.jpg)
 
 Raw | Threshold = 100 | Threshold = 180 (default) | Threshold = 220 |
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](images/sample_3.jpg) | ![](images/sample_3_fixed.jpg) | ![](images/sample_3_180.jpg) | ![](images/sample_3_220.jpg)
+![](images/sample_3.jpg) | ![](images/sample_3_100.jpg) | ![](images/sample_3_180.jpg) | ![](images/sample_3_220.jpg)
 
 Raw | Threshold = 100 | Threshold = 180 (default) | Threshold = 220 |
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](images/sample_4.jpg) | ![](images/sample_4_fixed.jpg) | ![](images/sample_4_180.jpg) | ![](images/sample_4_220.jpg)
+![](images/sample_4.jpg) | ![](images/sample_4_100.jpg) | ![](images/sample_4_180.jpg) | ![](images/sample_4_220.jpg)
 
 
 ## Reference
