@@ -40,21 +40,21 @@ The algorithm uses eye detection algorithm to first detect eyes. If eye detectio
 
 The following demos were generated using the default parameters. Some red eyes were failed to be removed because either the eyes were not detected or the threshold parameter was not appropriate. Tuning ``threshold`` makes red eyes removed in most of the cases.
 
-Raw | Processed |
-:-------------------------:|:-------------------------:
-![](images/sample_1.jpg) | ![](images/sample_1_fixed.jpg)
+Raw | Threshold = 100 | Threshold = 180 (default) | Threshold = 220 |
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](images/sample_1.jpg) | ![](images/sample_1_100.jpg) | ![](images/sample_1_180.jpg) | ![](images/sample_1_220.jpg)
 
-Raw | Processed |
-:-------------------------:|:-------------------------:
-![](images/sample_2.jpg) | ![](images/sample_2_fixed.jpg)
+Raw | Threshold = 100 | Threshold = 180 (default) | Threshold = 220 |
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](images/sample_2.jpg) | ![](images/sample_2_fixed.jpg) | ![](images/sample_2_180.jpg) | ![](images/sample_2_220.jpg)
 
-Raw | Processed |
-:-------------------------:|:-------------------------:
-![](images/sample_3.jpg) | ![](images/sample_3_fixed.jpg)
+Raw | Threshold = 100 | Threshold = 180 (default) | Threshold = 220 |
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](images/sample_3.jpg) | ![](images/sample_3_fixed.jpg) | ![](images/sample_3_180.jpg) | ![](images/sample_3_220.jpg)
 
-Raw | Processed |
-:-------------------------:|:-------------------------:
-![](images/sample_4.jpg) | ![](images/sample_4_fixed.jpg)
+Raw | Threshold = 100 | Threshold = 180 (default) | Threshold = 220 |
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](images/sample_4.jpg) | ![](images/sample_4_fixed.jpg) | ![](images/sample_4_180.jpg) | ![](images/sample_4_220.jpg)
 
 
 ## Reference
