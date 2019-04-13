@@ -13,6 +13,15 @@ This is a simple automatic red eye remover implemented using OpenCV and C++. It 
 * OpenCV 4.0.0 +
 * Boost 1.58 +
 
+## Installation
+
+### Boost
+
+```bash
+$ sudo apt-get install libboost-all-dev
+$ sudo apt-get install libcanberra-gtk-module
+```
+
 ## Usage
 
 ### Compile
