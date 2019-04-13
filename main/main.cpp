@@ -62,7 +62,7 @@ int main(int argc, char * argv[])
         red_eye_threshold = 180;
     }
 
-    Mat img_fixed = remove_red_eye(img, red_eye_threshold);
+    Mat img_fixed = removeRedEye(img, red_eye_threshold);
 
     // Write fixed image to hard drive.
     imwrite(img_fixed_filepath, img_fixed);

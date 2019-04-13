@@ -9,4 +9,4 @@ using namespace cv;
 
 void fillHoles(Mat &mask);
 
-Mat remove_red_eye(Mat &img, int red_eye_threshold);
+Mat removeRedEye(Mat &img, int red_eye_threshold);

@@ -24,19 +24,19 @@ $ sudo apt-get install libcanberra-gtk-module
 
 ## Usage
 
-### Compile
+### Compile and Install
 
-The executable ``main`` was pre-compiled in Ubuntu 16.04. If you want to compile in your own environment, please modify the OpenCV and Boost installation directories in the ``CMakeLists.txt`` file, and run the following command in the terminal.
+The executable ``AutoRedEyeRemoverApp`` was pre-compiled in Ubuntu 18.04. If you want to compile in your own environment, please run the following command in the terminal.
 
 ```bash
-$ cmake .
-$ make
+$ chmod +x install.sh
+$ ./install
 ```
 
 ### Run
 
 ```bash
-$ ./main <image_filepath> [threshold]
+$ ./AutoRedEyeRemoverApp <image_filepath> [threshold]
 ```
 
 The red eye removed image will be saved in the same directory to the image provided. 

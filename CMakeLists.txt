@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 2.8)
-set (CMAKE_CXX_STANDARD 11)
-project( auto_red_eye_remover )
-find_package( OpenCV REQUIRED )
-include_directories( /usr/local/include/opencv4/ /usr/include/boost/ )
-add_executable( main main.cpp utils.cpp )
-target_link_libraries( main /usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_objdetect -lopencv_imgproc -lboost_system -lboost_filesystem )
+cmake_minimum_required( VERSION 3.0.0 )
+set ( CMAKE_CXX_STANDARD 11 )
+
+project( AutoRedEyeRemover VERSION 1.0.0 )
+
+set(MODEL_FACE_FILEPATH "${CMAKE_CURRENT_SOURCE_DIR}/models/haarcascade_frontalface_alt.xml")
+set(MODEL_EYE_FILEPATH "${CMAKE_CURRENT_SOURCE_DIR}/models/haarcascade_eye_tree_eyeglasses.xml")
+
+add_subdirectory(lib)
+add_subdirectory(main)
+

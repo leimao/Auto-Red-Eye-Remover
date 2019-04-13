@@ -12,15 +12,17 @@ void fillHoles(Mat &mask)
     mask = (mask_inverse | mask);
 }
 
-Mat remove_red_eye(Mat &img, int red_eye_threshold)
+Mat removeRedEye(Mat &img, int red_eye_threshold)
 {
     int height = img.rows;
     int width = img.cols;
 
     Mat img_fixed = img.clone();
 
-    string face_cascade_name = "./models/haarcascade_frontalface_alt.xml";
-    string eyes_cascade_name = "./models/haarcascade_eye_tree_eyeglasses.xml";
+    //string face_cascade_name = "./models/haarcascade_frontalface_alt.xml";
+    //string eyes_cascade_name = "./models/haarcascade_eye_tree_eyeglasses.xml";
+    string face_cascade_name = MODEL_FACE_FILEPATH;
+    string eyes_cascade_name = MODEL_EYE_FILEPATH;
 
     CascadeClassifier eyes_cascade;
 
