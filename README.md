@@ -22,6 +22,12 @@ $ sudo apt-get install libboost-all-dev
 $ sudo apt-get install libcanberra-gtk-module
 ```
 
+### CMake
+
+```bash
+$ sudo apt-get install cmake
+```
+
 ## Usage
 
 ### Compile and Install
